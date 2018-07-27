@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,63 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KSurveys" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsL-lV-WeP">
+                                <rect key="frame" x="130.5" y="315" width="113" height="56"/>
+                                <state key="normal" title="Take The Survey"/>
+                                <connections>
+                                    <action selector="surveyClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="20V-xr-uSC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ea-NL-1kS">
+                                <rect key="frame" x="282" y="311" width="39" height="65"/>
+                                <state key="normal" title="Tasks"/>
+                                <connections>
+                                    <action selector="tasksClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Ay-fw-oRw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to KSurveys" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxx-BU-61g">
+                                <rect key="frame" x="69.5" y="101" width="235.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Get Started!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxV-rp-9mq">
+                                <rect key="frame" x="111" y="211" width="152" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQC-ps-xvF">
+                                <rect key="frame" x="47" y="321" width="58" height="44"/>
+                                <state key="normal" title="Consent"/>
+                                <connections>
+                                    <action selector="consentClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRa-G6-eh2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PsL-lV-WeP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LQC-ps-xvF" secondAttribute="trailing" constant="8" symbolic="YES" id="FEQ-oP-zX8"/>
+                            <constraint firstAttribute="trailing" secondItem="4ea-NL-1kS" secondAttribute="trailing" constant="54" id="Gsg-GK-2JR"/>
+                            <constraint firstItem="LQC-ps-xvF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="47" id="MCe-Yc-XcY"/>
+                            <constraint firstItem="LQC-ps-xvF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Nfq-s1-GXv"/>
+                            <constraint firstItem="PsL-lV-WeP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ODT-Lw-tVL"/>
+                            <constraint firstItem="Uxx-BU-61g" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RlO-Ul-w0Y"/>
+                            <constraint firstItem="PsL-lV-WeP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WGC-cq-jW6"/>
+                            <constraint firstItem="Uxx-BU-61g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="81" id="Wd2-YK-n7C"/>
+                            <constraint firstItem="4ea-NL-1kS" firstAttribute="top" secondItem="fxV-rp-9mq" secondAttribute="bottom" constant="76" id="ZEb-Zj-V0P"/>
+                            <constraint firstItem="PsL-lV-WeP" firstAttribute="top" secondItem="fxV-rp-9mq" secondAttribute="bottom" constant="80" id="aoI-A2-Sn2"/>
+                            <constraint firstItem="LQC-ps-xvF" firstAttribute="top" secondItem="fxV-rp-9mq" secondAttribute="bottom" constant="86" id="gb7-j8-nLJ"/>
+                            <constraint firstItem="4ea-NL-1kS" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lB7-xx-hGX"/>
+                            <constraint firstItem="4ea-NL-1kS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PsL-lV-WeP" secondAttribute="trailing" constant="8" symbolic="YES" id="lhN-wo-H45"/>
+                            <constraint firstItem="fxV-rp-9mq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sa5-sW-wIF"/>
+                            <constraint firstItem="fxV-rp-9mq" firstAttribute="top" secondItem="Uxx-BU-61g" secondAttribute="bottom" constant="80" id="vqN-He-eah"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
